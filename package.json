@@ -1,8 +1,8 @@
 {
-  "name": "react-countup",
-  "version": "4.3.3",
+  "name": "react-countup-test",
+  "version": "1.0.0",
   "description": "A React component wrapper around CountUp.js",
-  "author": "Glenn Reyes <glenn@glennreyes.com> (https://twitter.com/glnnrys)",
+  "author": "Henrique Tavares <ihenrits@gmail.com>",
   "keywords": [
     "react-component",
     "react",

@@ -22,6 +22,7 @@ class CountUp extends Component {
     style: PropTypes.object,
     useEasing: PropTypes.bool,
     preserveValue: PropTypes.bool,
+    render: PropTypes.func,
   };
 
   static defaultProps = {
@@ -45,6 +46,7 @@ class CountUp extends Component {
     style: undefined,
     useEasing: true,
     preserveValue: false,
+    render: null,
   };
 
   componentDidMount() {
@@ -183,7 +185,7 @@ class CountUp extends Component {
 
   render() {
     const { children, className, style } = this.props;
-    const { containerRef, pauseResume, reset, restart, update } = this;
+    const { containerRef, pauseResume, reset, restart, update, render } = this;
 
     if (typeof children === 'function') {
       return children({
@@ -193,6 +195,16 @@ class CountUp extends Component {
         start: restart,
         update,
       });
+    }
+
+    if (render) {
+      return {
+        countUpRef: containerRef,
+        pauseResume,
+        reset,
+        start: restart,
+        update,
+      };
     }
 
     return <span className={className} ref={containerRef} style={style} />;

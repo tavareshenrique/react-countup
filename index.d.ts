@@ -62,6 +62,7 @@ export interface CountUpProps extends CommonProps, CallbackProps {
   redraw?: boolean;
   preserveValue?: boolean;
   children?: (props: RenderCounterProps) => JSX.Element;
+  render?: (props: RenderCounterProps) => JSX.Element;
 }
 
 declare class CountUp extends React.Component<CountUpProps, any> {}
